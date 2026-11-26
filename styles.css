@@ -3756,3 +3756,102 @@ body.dark-theme .teacher-brand-heading {
         text-justify: inter-word !important;
     }
 }
+
+/* ==========================================================================
+   CAT PAW FRAME THEME (KHUNG CHÂN MÈO SINH ĐỘNG) - B2)
+   ========================================================================== */
+@keyframes catPawFloatGentle {
+    0%, 100% { transform: rotate(-14deg) translateY(0px); }
+    50% { transform: rotate(-9deg) translateY(-4px); }
+}
+
+.formula-block, .sample-spotlight-card, .followup-answer-box {
+    position: relative !important;
+    margin-top: 26px !important;
+    border-radius: 22px !important;
+    overflow: visible !important;
+    border: 2px solid #6ee7b7 !important;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='92' height='92' viewBox='0 0 92 92'%3E%3Cg fill='%23fb923c' fill-opacity='0.08'%3E%3Cellipse cx='24' cy='28' rx='7' ry='5.5'/%3E%3Ccircle cx='16' cy='19' r='3'/%3E%3Ccircle cx='22' cy='15' r='3'/%3E%3Ccircle cx='29' cy='16' r='3'/%3E%3Ccircle cx='34' cy='21' r='2.8'/%3E%3C/g%3E%3Cg fill='%2310b981' fill-opacity='0.075' transform='translate(46,42) rotate(22)'%3E%3Cellipse cx='20' cy='24' rx='6.5' ry='5'/%3E%3Ccircle cx='13' cy='16' r='2.8'/%3E%3Ccircle cx='19' cy='12' r='2.8'/%3E%3Ccircle cx='25' cy='13' r='2.8'/%3E%3Ccircle cx='30' cy='18' r='2.5'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(145deg, #ecfdf5 0%, #ffffff 55%, #fffbeb 100%) !important;
+    box-shadow: 0 10px 26px -6px rgba(16, 185, 129, 0.16), 0 0 0 4px rgba(251, 146, 60, 0.08) !important;
+}
+
+body.dark-theme .formula-block,
+body.dark-theme .sample-spotlight-card,
+body.dark-theme .followup-answer-box {
+    border-color: #34d399 !important;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='92' height='92' viewBox='0 0 92 92'%3E%3Cg fill='%23fb923c' fill-opacity='0.11'%3E%3Cellipse cx='24' cy='28' rx='7' ry='5.5'/%3E%3Ccircle cx='16' cy='19' r='3'/%3E%3Ccircle cx='22' cy='15' r='3'/%3E%3Ccircle cx='29' cy='16' r='3'/%3E%3Ccircle cx='34' cy='21' r='2.8'/%3E%3C/g%3E%3Cg fill='%2310b981' fill-opacity='0.10' transform='translate(46,42) rotate(22)'%3E%3Cellipse cx='20' cy='24' rx='6.5' ry='5'/%3E%3Ccircle cx='13' cy='16' r='2.8'/%3E%3Ccircle cx='19' cy='12' r='2.8'/%3E%3Ccircle cx='25' cy='13' r='2.8'/%3E%3Ccircle cx='30' cy='18' r='2.5'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(145deg, #0c2920 0%, #16222c 55%, #2c1e12 100%) !important;
+    box-shadow: 0 10px 26px -6px rgba(16, 185, 129, 0.28), 0 0 0 3px rgba(251, 146, 60, 0.14) !important;
+}
+
+/* Tai mèo xinh xắn nhô trên viền khung */
+.formula-block::before,
+.sample-spotlight-card::before,
+.followup-answer-box::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -19px !important;
+    left: 24px !important;
+    width: 82px !important;
+    height: 22px !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='82' height='22' viewBox='0 0 82 22'%3E%3Cpath d='M4 21 C5 6, 13 1, 19 2 C24 3, 30 12, 33 21 Z' fill='%23ecfdf5' stroke='%236ee7b7' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M10 19 C11 10, 15 6, 18.5 6.8 C22 7.5, 25 13, 27 19 Z' fill='%23fed7aa'/%3E%3Cpath d='M49 21 C52 12, 58 3, 63 2 C69 1, 77 6, 78 21 Z' fill='%23ecfdf5' stroke='%236ee7b7' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M55 19 C57 13, 60 7.5, 63.5 6.8 C67 6, 71 10, 72 19 Z' fill='%23fed7aa'/%3E%3C/svg%3E") !important;
+}
+
+body.dark-theme .formula-block::before,
+body.dark-theme .sample-spotlight-card::before,
+body.dark-theme .followup-answer-box::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='82' height='22' viewBox='0 0 82 22'%3E%3Cpath d='M4 21 C5 6, 13 1, 19 2 C24 3, 30 12, 33 21 Z' fill='%230c2920' stroke='%2334d399' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M10 19 C11 10, 15 6, 18.5 6.8 C22 7.5, 25 13, 27 19 Z' fill='%23fb923c'/%3E%3Cpath d='M49 21 C52 12, 58 3, 63 2 C69 1, 77 6, 78 21 Z' fill='%230c2920' stroke='%2334d399' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M55 19 C57 13, 60 7.5, 63.5 6.8 C67 6, 71 10, 72 19 Z' fill='%23fb923c'/%3E%3C/svg%3E") !important;
+}
+
+/* Con dấu chân mèo nổi sinh động góc phải trên */
+.formula-block::after,
+.sample-spotlight-card::after,
+.followup-answer-box::after {
+    content: "" !important;
+    position: absolute !important;
+    top: -15px !important;
+    right: 20px !important;
+    width: 34px !important;
+    height: 34px !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    animation: catPawFloatGentle 3.2s ease-in-out infinite !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23fff7ed' stroke='%23fb923c' stroke-width='3'/%3E%3Cellipse cx='32' cy='39' rx='12' ry='9.5' fill='%23fb923c'/%3E%3Ccircle cx='18' cy='27' r='5' fill='%23fb923c'/%3E%3Ccircle cx='27' cy='20' r='5.2' fill='%23fb923c'/%3E%3Ccircle cx='37' cy='20' r='5.2' fill='%23fb923c'/%3E%3Ccircle cx='46' cy='27' r='5' fill='%23fb923c'/%3E%3C/svg%3E") !important;
+}
+
+body.dark-theme .formula-block::after,
+body.dark-theme .sample-spotlight-card::after,
+body.dark-theme .followup-answer-box::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232c1e12' stroke='%23fb923c' stroke-width='3'/%3E%3Cellipse cx='32' cy='39' rx='12' ry='9.5' fill='%23fb923c'/%3E%3Ccircle cx='18' cy='27' r='5' fill='%23fb923c'/%3E%3Ccircle cx='27' cy='20' r='5.2' fill='%23fb923c'/%3E%3Ccircle cx='37' cy='20' r='5.2' fill='%23fb923c'/%3E%3Ccircle cx='46' cy='27' r='5' fill='%23fb923c'/%3E%3C/svg%3E") !important;
+}
+
+.formula-bracket-hl {
+    display: inline-block !important;
+    padding: 1px 10px !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+    background: linear-gradient(135deg, #dcfce7 0%, #fef3c7 100%) !important;
+    color: #047857 !important;
+    border: 1px solid #6ee7b7 !important;
+    font-weight: 700 !important;
+    margin: 2px 2px !important;
+}
+body.dark-theme .formula-bracket-hl {
+    background: rgba(56, 189, 248, 0.16) !important;
+    color: #e0f2fe !important;
+    border-color: #34d399 !important;
+}
+
+.sample-spotlight-header {
+    border-radius: 20px 20px 0 0 !important;
+}
+
