@@ -5600,17 +5600,9 @@ const CLASS_STUDENTS = {
         "Nguyễn Tiến Trung",
         "Trần Thị Ánh Tuyết",
         "Đặng Nguyễn Khánh Uyên",
-        "Nguyễn Thị Chúc Yến",
-        "Gia Tuệ"
+        "Nguyễn Thị Chúc Yến"
     ],
-    "B2": [
-        "Gia Tuệ",
-        "Gia Tuê",
-        "Nguyễn Gia Tuệ",
-        "Trần Gia Tuệ",
-        "Lê Gia Tuệ"
-    ]
-};
+    };
 
 // Các tab được mở quyền truy cập cho học viên (Mở Nhóm 1, Tổng quan và Công cụ; Khóa Nhóm 2-6)
 const UNLOCKED_TABS_B212 = ['flower-garden', 'overview', 'group-benefits', 'tool-simulator', 'tool-flashcards'];
@@ -5762,8 +5754,18 @@ function initAuth() {
             state.student.isTeacher = true;
             state.student.hasFullAccess = true;
         } else {
-            // 2. Kiểm tra học viên thuộc lớp B212 hoặc B2
-            const allowedClasses = ['B212', 'B2'];
+            // 2. Kiểm tra khóa Gia Tuệ và xác thực lớp B212
+            const isGiaTue = checkIfGiaTue(nameVal);
+            if (isGiaTue || formattedClass === 'B2') {
+                if (errorMsg) {
+                    errorMsg.textContent = 'Tài khoản học viên "Gia Tuệ" hiện đã bị KHÓA! Vui lòng liên hệ Giáo viên (Cô Nguyệt).';
+                    errorMsg.style.display = 'block';
+                }
+                if (nameInput) nameInput.focus();
+                return;
+            }
+
+            const allowedClasses = ['B212'];
             if (!allowedClasses.includes(formattedClass)) {
                 if (errorMsg) {
                     errorMsg.textContent = 'Mã lớp không hợp lệ. Vui lòng kiểm tra lại!';
@@ -5773,23 +5775,8 @@ function initAuth() {
                 return;
             }
 
-            let matchedStudent = null;
-            const isGiaTue = checkIfGiaTue(nameVal);
-
-            if (formattedClass === 'B2') {
-                if (isGiaTue) {
-                    matchedStudent = nameVal.trim() || 'Gia Tuệ';
-                } else {
-                    const roster = CLASS_STUDENTS['B2'] || [];
-                    matchedStudent = roster.find(s => normalizeStr(s) === normName);
-                }
-            } else {
-                const roster = CLASS_STUDENTS[formattedClass] || [];
-                matchedStudent = roster.find(s => normalizeStr(s) === normName);
-                if (!matchedStudent && isGiaTue) {
-                    matchedStudent = nameVal.trim() || 'Gia Tuệ';
-                }
-            }
+            const roster = CLASS_STUDENTS[formattedClass] || [];
+            const matchedStudent = roster.find(s => normalizeStr(s) === normName);
 
             if (!matchedStudent) {
                 if (errorMsg) {
@@ -5803,7 +5790,7 @@ function initAuth() {
             finalName = matchedStudent;
             finalClass = formattedClass;
             state.student.isTeacher = false;
-            state.student.hasFullAccess = (isGiaTue || formattedClass === 'B2');
+            state.student.hasFullAccess = false;
         }
 
         if (errorMsg) errorMsg.style.display = 'none';
